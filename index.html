@@ -60,17 +60,14 @@
       letter-spacing: 0.2px;
     }
 
-    .logo {
+    .site-logo {
       width: 52px;
       height: 52px;
+      object-fit: contain;
+      display: block;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
       background: var(--sg-yellow);
-      color: var(--sg-blue);
-      font-size: 27px;
-      border: 4px solid var(--sg-blue);
-      box-shadow: 0 4px 14px rgba(0,45,114,0.18);
+      border: 3px solid var(--sg-blue);
     }
 
     nav {
@@ -246,13 +243,26 @@
       color: var(--muted);
     }
 
-    .icon-card {
+    .image-placeholder {
       height: 158px;
       background: linear-gradient(135deg, var(--sg-blue), var(--sg-blue-dark));
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       color: var(--sg-yellow);
-      font-size: 58px;
+      font-size: 15px;
+      font-weight: 900;
+      padding: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      letter-spacing: 0.2px;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 158px;
+      object-fit: cover;
+      display: block;
     }
 
     .highlight {
@@ -391,7 +401,7 @@
   <header>
     <div class="nav-wrap">
       <a class="brand" href="#top">
-        <span class="logo">🏏</span>
+        <img class="site-logo" src="images/sgk-logo.png" alt="SG Karlsruhe logo placeholder">
         <span>SG Karlsruhe Cricket</span>
       </a>
 
@@ -473,7 +483,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon-card">👦</div>
+          <div class="image-placeholder">images/kids-beginners.jpg</div>
           <div class="card-body">
             <h3>For beginners</h3>
             <p>Children can start with simple softball cricket, basic movement skills and fun games.</p>
@@ -481,7 +491,7 @@
         </article>
 
         <article class="card">
-          <div class="icon-card">🏏</div>
+          <div class="image-placeholder">images/kids-skill-development.jpg</div>
           <div class="card-body">
             <h3>Skill development</h3>
             <p>Players gradually improve technique, confidence, match awareness and teamwork.</p>
@@ -489,7 +499,7 @@
         </article>
 
         <article class="card">
-          <div class="icon-card">🎉</div>
+          <div class="image-placeholder">images/kids-match-day.jpg</div>
           <div class="card-body">
             <h3>Match-day experience</h3>
             <p>Friendly matches and youth events give children unforgettable cricket moments.</p>
@@ -518,7 +528,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon-card">🟡</div>
+          <div class="image-placeholder">images/softball-cricket.jpg</div>
           <div class="card-body">
             <h3>Softball cricket</h3>
             <p>A gentle and fun entry point for young beginners and families discovering cricket.</p>
@@ -526,7 +536,7 @@
         </article>
 
         <article class="card">
-          <div class="icon-card">🧢</div>
+          <div class="image-placeholder">images/transition-group.jpg</div>
           <div class="card-body">
             <h3>Transition group</h3>
             <p>For players ready to move towards more structured training and match situations.</p>
@@ -534,7 +544,7 @@
         </article>
 
         <article class="card">
-          <div class="icon-card">💪</div>
+          <div class="image-placeholder">images/hardball-pathway.jpg</div>
           <div class="card-body">
             <h3>Hard-ball pathway</h3>
             <p>For developing players who want to progress towards competitive cricket formats.</p>
