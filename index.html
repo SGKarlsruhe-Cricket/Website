@@ -6,13 +6,15 @@
   <title>SG Karlsruhe Cricket</title>
   <style>
     :root {
-      --purple: #2a0b45;
-      --purple-light: #4b1979;
-      --yellow: #ffd200;
-      --yellow-soft: #ffe45c;
+      --sg-yellow: #efdf00;
+      --sg-yellow-soft: #fff6a8;
+      --sg-blue: #002d72;
+      --sg-blue-dark: #001970;
       --white: #ffffff;
-      --ink: #1f1f1f;
-      --muted: #5f5f5f;
+      --ink: #182033;
+      --muted: #5f6b7a;
+      --line: rgba(0, 45, 114, 0.14);
+      --shadow: 0 18px 45px rgba(0, 45, 114, 0.14);
     }
 
     * { box-sizing: border-box; }
@@ -22,7 +24,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--ink);
-      background: var(--yellow);
+      background: var(--white);
       line-height: 1.6;
     }
 
@@ -32,45 +34,48 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: var(--purple);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-wrap {
-      max-width: 1180px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      color: var(--yellow);
+      font-weight: 900;
+      color: var(--sg-blue);
       text-decoration: none;
       white-space: nowrap;
+      letter-spacing: 0.2px;
     }
 
     .logo {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--yellow);
-      color: var(--purple);
-      font-size: 26px;
-      border: 3px solid var(--white);
+      background: var(--sg-yellow);
+      color: var(--sg-blue);
+      font-size: 27px;
+      border: 4px solid var(--sg-blue);
+      box-shadow: 0 4px 14px rgba(0,45,114,0.18);
     }
 
     nav {
       display: flex;
-      gap: 4px;
+      gap: 6px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -79,49 +84,75 @@
       text-decoration: none;
       padding: 10px 12px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 14px;
-      color: var(--white);
+      color: var(--sg-blue);
     }
 
     nav a:hover {
-      background: var(--yellow);
-      color: var(--purple);
+      background: var(--sg-yellow);
     }
 
     .hero {
-      min-height: 560px;
-      background: var(--yellow);
-      color: var(--purple);
-      display: flex;
-      align-items: center;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.9), transparent 34%),
+        linear-gradient(135deg, var(--sg-yellow), #ffe600 58%, var(--sg-yellow-soft));
+      color: var(--sg-blue);
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: 1180px;
+      max-width: 1120px;
+      min-height: 620px;
       margin: 0 auto;
-      padding: 74px 20px;
+      padding: 72px 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
     }
 
     .eyebrow {
-      color: var(--purple);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      color: var(--sg-blue);
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 84px);
+      font-size: clamp(44px, 8vw, 82px);
       line-height: 0.96;
       margin: 0 0 22px;
-      max-width: 1000px;
+      letter-spacing: -2px;
     }
 
     .hero p {
       font-size: 21px;
-      max-width: 760px;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 0 30px;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      transform: rotate(1.5deg);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 14px;
+      color: var(--sg-blue);
+      font-size: 30px;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-weight: 700;
     }
 
     .buttons {
@@ -134,26 +165,26 @@
       display: inline-block;
       border-radius: 999px;
       padding: 14px 22px;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: none;
       cursor: pointer;
+      border: 2px solid var(--sg-blue);
     }
 
     .btn-primary {
-      background: var(--purple);
-      color: var(--yellow);
+      background: var(--sg-blue);
+      color: var(--white);
     }
 
     .btn-secondary {
       background: var(--white);
-      color: var(--purple);
+      color: var(--sg-blue);
     }
 
     .section {
-      max-width: 1180px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 72px 20px;
-      background: var(--yellow);
+      padding: 74px 20px;
     }
 
     .section-title {
@@ -164,13 +195,14 @@
     .section-title h2 {
       font-size: clamp(30px, 5vw, 48px);
       margin: 0 0 10px;
-      color: var(--purple);
+      color: var(--sg-blue);
+      letter-spacing: -1px;
     }
 
     .section-title p {
       margin: 0 auto;
       color: var(--muted);
-      max-width: 780px;
+      max-width: 760px;
       font-size: 18px;
     }
 
@@ -183,55 +215,58 @@
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 26px;
       align-items: stretch;
     }
 
     .card,
-    .about-box {
+    .info-box {
       background: var(--white);
-      border-radius: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 30px rgba(0,45,114,0.08);
     }
 
     .card-body,
-    .about-box {
-      padding: 26px;
+    .info-box {
+      padding: 28px;
     }
 
     .card h3,
-    .about-box h3 {
-      margin-top: 0;
-      color: var(--purple);
+    .info-box h3 {
+      margin: 0 0 10px;
+      color: var(--sg-blue);
+      font-size: 23px;
     }
 
     .card p,
-    .about-box p,
-    .about-box li {
+    .info-box p,
+    .info-box li {
       color: var(--muted);
     }
 
     .icon-card {
-      height: 170px;
-      background: linear-gradient(135deg, var(--purple-light), var(--purple));
+      height: 158px;
+      background: linear-gradient(135deg, var(--sg-blue), var(--sg-blue-dark));
       display: grid;
       place-items: center;
-      color: var(--yellow);
-      font-size: 60px;
+      color: var(--sg-yellow);
+      font-size: 58px;
     }
 
     .highlight {
-      background: var(--purple);
+      background: var(--sg-blue);
       color: var(--white);
-      border-radius: 24px;
-      padding: 34px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.16);
+      border-radius: 26px;
+      padding: 32px;
+      box-shadow: var(--shadow);
     }
 
     .highlight h3 {
-      color: var(--yellow);
+      color: var(--sg-yellow);
       margin-top: 0;
+      font-size: 26px;
     }
 
     .highlight p,
@@ -239,104 +274,115 @@
       color: rgba(255,255,255,0.9);
     }
 
-    .stat-row {
+    .band {
+      background: var(--sg-blue);
+      color: var(--white);
+      margin: 30px 0;
+    }
+
+    .band-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 58px 20px;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 26px;
     }
 
     .stat {
-      background: var(--white);
-      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 20px;
       padding: 22px;
       text-align: center;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.10);
     }
 
     .stat strong {
       display: block;
-      font-size: 34px;
-      color: var(--purple);
+      color: var(--sg-yellow);
+      font-size: 36px;
       line-height: 1;
     }
 
     .stat span {
-      color: var(--muted);
+      display: block;
+      margin-top: 8px;
       font-weight: 700;
-      font-size: 14px;
+      color: rgba(255,255,255,0.9);
     }
 
-    .fixtures {
-      border-collapse: collapse;
-      width: 100%;
+    .activity-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .activity {
       background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--sg-yellow);
       border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      padding: 18px 20px;
+      box-shadow: 0 8px 22px rgba(0,45,114,0.07);
     }
 
-    .fixtures th,
-    .fixtures td {
-      text-align: left;
-      padding: 16px;
-      border-bottom: 1px solid #edf0ee;
-      vertical-align: top;
+    .activity strong {
+      color: var(--sg-blue);
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .fixtures th {
-      background: var(--purple);
-      color: var(--yellow);
+    .activity span {
+      color: var(--muted);
     }
 
     .contact-panel {
-      background: var(--purple);
+      background: linear-gradient(135deg, var(--sg-blue), var(--sg-blue-dark));
       color: var(--white);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 44px;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 28px;
       align-items: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.16);
+      box-shadow: var(--shadow);
     }
 
     .contact-panel h2 {
-      color: var(--yellow);
+      color: var(--sg-yellow);
       margin-top: 0;
+      font-size: 36px;
     }
 
     .contact-panel p {
       color: rgba(255,255,255,0.9);
     }
 
+    .volunteer-note {
+      background: #f7f9ff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      color: var(--muted);
+    }
+
     footer {
-      background: var(--purple);
-      color: var(--yellow);
+      background: var(--sg-blue);
+      color: var(--white);
       padding: 30px 20px;
       text-align: center;
       font-weight: 700;
     }
 
-    @media (max-width: 860px) {
-      .nav-wrap {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
+    @media (max-width: 900px) {
+      .nav-wrap { align-items: flex-start; flex-direction: column; }
       nav { justify-content: flex-start; }
-
+      .hero-inner,
       .grid-3,
       .grid-2,
-      .stat-row,
-      .contact-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { min-height: 500px; }
-      .fixtures { font-size: 14px; }
-      .fixtures th,
-      .fixtures td { padding: 12px; }
+      .band-inner,
+      .contact-panel { grid-template-columns: 1fr; }
+      .hero-inner { min-height: auto; padding: 56px 20px; }
+      .hero-card { transform: none; }
     }
   </style>
 </head>
@@ -351,11 +397,10 @@
 
       <nav>
         <a href="#about">Club</a>
-        <a href="#juniors">Juniors</a>
-        <a href="#teams">Teams</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#calendar">2026</a>
-        <a href="#support">Support</a>
+        <a href="#kids">Kids</a>
+        <a href="#programs">Programs</a>
+        <a href="#activities">Activities</a>
+        <a href="#join">Join</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -364,107 +409,110 @@
   <main id="top">
     <section class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">Karlsruhe · Baden-Württemberg</div>
-        <h1>Celebrate cricket. Grow young players. Unite communities.</h1>
-        <p>
-          Welcome to SG Karlsruhe Cricket — a growing cricket department for beginners, youth players,
-          parents and volunteers in Karlsruhe.
-        </p>
-        <div class="buttons">
-          <a class="btn btn-primary" href="#support">Join or volunteer</a>
-          <a class="btn btn-secondary" href="#calendar">View 2026 activities</a>
+        <div>
+          <div class="eyebrow">Cricket in Karlsruhe</div>
+          <h1>Play cricket. Make friends. Have fun.</h1>
+          <p>
+            SG Karlsruhe Cricket welcomes children, families, beginners and experienced players.
+            Come for a trial session, learn the game and enjoy cricket with a friendly local community.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#join">Join a trial session</a>
+            <a class="btn btn-secondary" href="#kids">Explore kids cricket</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>New players welcome</h2>
+          <ul>
+            <li>No previous cricket experience needed</li>
+            <li>Youth cricket and family-friendly sessions</li>
+            <li>Beginner pathway from softball to hard-ball</li>
+            <li>Training, matches and community events</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="section-title">
-        <h2>About SG Karlsruhe Cricket</h2>
+        <h2>A friendly cricket department at SG Karlsruhe</h2>
         <p>
-          SG Karlsruhe Cricket was formed by community cricket enthusiasts and continues to grow through
-          training, matches, youth development and volunteer support.
+          We are building a welcoming cricket community in Karlsruhe — with a special focus on children,
+          families, learning, teamwork and enjoying the sport together.
         </p>
       </div>
 
       <div class="grid-2">
-        <div class="about-box">
-          <h3>Our Vision</h3>
+        <div class="info-box">
+          <h3>Our vision</h3>
           <p>
-            To develop young players with strong character on and off the field by providing excellent
-            cricket practice facilities in South Germany.
-          </p>
-
-          <h3>Our Mission</h3>
-          <p>
-            To celebrate the sport and unite cricket communities — bringing children, parents,
-            beginners and experienced players together through cricket.
+            To help young players develop strong character on and off the field, while creating excellent
+            cricket opportunities in South Germany.
           </p>
         </div>
 
         <div class="highlight">
-          <h3>What we offer</h3>
-          <ul>
-            <li>Youth cricket and U11 development</li>
-            <li>Beginner-friendly cricket for new players</li>
-            <li>Softball cricket and transition to hard-ball cricket</li>
-            <li>Women cricket, friendly matches and tournaments</li>
-            <li>Volunteer opportunities for parents and community members</li>
-          </ul>
+          <h3>Our mission</h3>
+          <p>
+            Celebrate cricket and unite communities — from children trying the sport for the first time
+            to adults who want to train, play and support the game locally.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="juniors" class="section">
+    <section id="kids" class="section">
       <div class="section-title">
-        <h2>Junior Cricket</h2>
+        <h2>Kids cricket that feels fun, safe and motivating</h2>
         <p>
-          Our junior program helps children learn cricket fundamentals, teamwork and confidence through
-          fun training sessions and match-day experiences.
+          Children learn batting, bowling, fielding and teamwork through age-appropriate drills,
+          friendly matches and positive coaching.
         </p>
       </div>
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon-card">🏆</div>
+          <div class="icon-card">👦</div>
           <div class="card-body">
-            <h3>U11 Winter League</h3>
-            <p>
-              SG Karlsruhe hosted a six-team U11 Winter League and received excellent feedback from
-              visiting teams for the quality of hosting and match-day atmosphere.
-            </p>
+            <h3>For beginners</h3>
+            <p>Children can start with simple softball cricket, basic movement skills and fun games.</p>
           </div>
         </article>
 
         <article class="card">
-          <div class="icon-card">🥉</div>
+          <div class="icon-card">🏏</div>
           <div class="card-body">
-            <h3>Strong Team Performance</h3>
-            <p>
-              Our junior players performed strongly in a competitive field and gained valuable tournament
-              experience with support from coaches, parents and youth umpires.
-            </p>
+            <h3>Skill development</h3>
+            <p>Players gradually improve technique, confidence, match awareness and teamwork.</p>
           </div>
         </article>
 
         <article class="card">
-          <div class="icon-card">⭐</div>
+          <div class="icon-card">🎉</div>
           <div class="card-body">
-            <h3>Player Development</h3>
-            <p>
-              SGK players continue to grow in batting, bowling, fielding, teamwork and game awareness
-              through regular training and match exposure.
-            </p>
+            <h3>Match-day experience</h3>
+            <p>Friendly matches and youth events give children unforgettable cricket moments.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="teams" class="section">
+    <div class="band">
+      <div class="band-inner">
+        <div class="stat"><strong>6</strong><span>Teams hosted at U11 Winter League</span></div>
+        <div class="stat"><strong>U11</strong><span>Youth cricket focus</span></div>
+        <div class="stat"><strong>2026</strong><span>More matches and activities planned</span></div>
+        <div class="stat"><strong>SGK</strong><span>Part of the Karlsruhe sports community</span></div>
+      </div>
+    </div>
+
+    <section id="programs" class="section">
       <div class="section-title">
-        <h2>Teams & Programs</h2>
+        <h2>Programs for different levels</h2>
         <p>
-          We support players across age groups and experience levels — from first cricket experiences
-          to hard-ball cricket.
+          Whether your child is completely new or already loves cricket, there is a path to join,
+          learn and grow at SG Karlsruhe Cricket.
         </p>
       </div>
 
@@ -472,196 +520,72 @@
         <article class="card">
           <div class="icon-card">🟡</div>
           <div class="card-body">
-            <h3>Beginners & Softball</h3>
-            <p>
-              A friendly entry point for children and new players to learn cricket safely and enjoyably.
-            </p>
+            <h3>Softball cricket</h3>
+            <p>A gentle and fun entry point for young beginners and families discovering cricket.</p>
           </div>
         </article>
 
         <article class="card">
-          <div class="icon-card">🏏</div>
+          <div class="icon-card">🧢</div>
           <div class="card-body">
-            <h3>Transition to Hard-Ball</h3>
-            <p>
-              Structured development for players moving from softball cricket into hard-ball formats.
-            </p>
+            <h3>Transition group</h3>
+            <p>For players ready to move towards more structured training and match situations.</p>
           </div>
         </article>
 
         <article class="card">
-          <div class="icon-card">💜</div>
+          <div class="icon-card">💪</div>
           <div class="card-body">
-            <h3>Hard-Ball & Inclusive Cricket</h3>
-            <p>
-              Hard-ball tournaments, adult cricket and future inclusive cricket activities are part of
-              our growth outlook.
-            </p>
+            <h3>Hard-ball pathway</h3>
+            <p>For developing players who want to progress towards competitive cricket formats.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="facilities" class="section">
+    <section id="activities" class="section">
       <div class="section-title">
-        <h2>Facilities & Future Plans</h2>
+        <h2>What we are planning</h2>
         <p>
-          We already have useful training resources — and a clear ambition to build one of the best
-          cricket practice environments in Southern Germany.
+          We want the website to become the simple place where families can see what is happening next.
+        </p>
+      </div>
+
+      <div class="activity-list">
+        <div class="activity"><strong>Beginners kids match</strong><span>A friendly match format for new players and families.</span></div>
+        <div class="activity"><strong>U11 summer and winter activities</strong><span>More youth cricket opportunities across the season.</span></div>
+        <div class="activity"><strong>Friendly matches with neighbouring clubs</strong><span>Regular match experience in a relaxed community setting.</span></div>
+        <div class="activity"><strong>Family and community events</strong><span>Cricket, food, friends and a welcoming club atmosphere.</span></div>
+      </div>
+    </section>
+
+    <section id="join" class="section">
+      <div class="section-title">
+        <h2>Want to try cricket?</h2>
+        <p>
+          The easiest next step is to contact us and come for a trial session. Beginners are welcome,
+          and children do not need their own equipment for the first session.
         </p>
       </div>
 
       <div class="grid-2">
-        <div class="about-box">
-          <h3>Current Facilities</h3>
-          <ul>
-            <li>Cricket bats, balls and stumps</li>
-            <li>Bowling machine</li>
-            <li>Indoor hall access at SGK</li>
-            <li>Outdoor ground usage during the summer season</li>
-            <li>Kitchen access for catering and community events</li>
-          </ul>
-        </div>
-
         <div class="highlight">
-          <h3>Future Aspiration</h3>
+          <h3>Join as a player or parent</h3>
           <p>
-            Develop cricket practice bays with netting and work towards high-quality cricket practice
-            facilities for youth and adult players in South Germany.
+            Send us a short message with the player’s age group, cricket experience if any, and your
+            contact details. We will guide you to the right training session.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="calendar" class="section">
-      <div class="section-title">
-        <h2>2026 Activities & Calendar</h2>
-        <p>
-          Our goal is to host more matches and tournaments, grow SGK Cricket visibility and attract
-          more youth players through a clearer activity calendar.
-        </p>
-      </div>
-
-      <table class="fixtures">
-        <thead>
-          <tr>
-            <th>Activity</th>
-            <th>Focus</th>
-            <th>Status</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Beginners Kids Match</td>
-            <td>Youth & beginners</td>
-            <td>Planned</td>
-            <td>Friendly match format for new players</td>
-          </tr>
-          <tr>
-            <td>U11 Summer League</td>
-            <td>Junior cricket</td>
-            <td>Planned</td>
-            <td>Regional youth cricket development</td>
-          </tr>
-          <tr>
-            <td>U11 Winter League</td>
-            <td>Junior cricket</td>
-            <td>Planned</td>
-            <td>Indoor cricket and match-day experience</td>
-          </tr>
-          <tr>
-            <td>Hard-Ball Tournaments</td>
-            <td>Player transition</td>
-            <td>Planned</td>
-            <td>For developing hard-ball cricket skills</td>
-          </tr>
-          <tr>
-            <td>Friendly Matches</td>
-            <td>Community cricket</td>
-            <td>Planned</td>
-            <td>Monthly matches with neighbouring cricket clubs</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="stat-row">
-        <div class="stat"><strong>6</strong><span>Teams hosted in U11 Winter League</span></div>
-        <div class="stat"><strong>2026</strong><span>Focus on visibility and youth growth</span></div>
-        <div class="stat"><strong>51</strong><span>Target locations for flyer outreach</span></div>
-        <div class="stat"><strong>∞</strong><span>Volunteer opportunities</span></div>
-      </div>
-    </section>
-
-    <section id="highlights" class="section">
-      <div class="section-title">
-        <h2>Recent Highlights</h2>
-        <p>
-          SGK Cricket has built momentum through hosting, youth development, community involvement
-          and increased visibility.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-body">
-            <h3>U11 Event Hosting</h3>
-            <p>
-              SGK created a positive match-day environment and received strong feedback from guest teams.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-body">
-            <h3>Community Visibility</h3>
-            <p>
-              Club activities helped raise the visibility of cricket within SG Karlsruhe and the wider community.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-body">
-            <h3>Fundraising & Equipment</h3>
-            <p>
-              Community catering and fundraising help support new balls, training equipment, team identity
-              and future cricket activities.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="support" class="section">
-      <div class="section-title">
-        <h2>Join Us & Support SGK Cricket</h2>
-        <p>
-          Our children thrive when the community stands behind them. Be part of their journey and help
-          us build a cricket environment full of joy, learning and success.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="about-box">
-          <h3>Who can join?</h3>
-          <ul>
-            <li>Children interested in youth cricket</li>
-            <li>Beginners who want to try cricket</li>
-            <li>Adults who want to train or play matches</li>
-            <li>Parents and volunteers who want to support events and match days</li>
-          </ul>
+          <a class="btn btn-secondary" href="#contact">Contact us</a>
         </div>
 
-        <div class="highlight">
-          <h3>Volunteer opportunities</h3>
+        <div class="info-box">
+          <h3>Good to know</h3>
           <ul>
-            <li>Training posts across Instagram, Facebook and WhatsApp</li>
-            <li>Short reels, photography and videography</li>
-            <li>Flyer distribution to restaurants, groceries, libraries and schools</li>
-            <li>Website updates, press outreach and community-building events</li>
+            <li>Children and adults can join</li>
+            <li>Beginners are welcome</li>
+            <li>Family-friendly atmosphere</li>
+            <li>Training and match opportunities depend on season and venue availability</li>
           </ul>
-          <a class="btn btn-secondary" href="#contact">Get involved</a>
         </div>
       </div>
     </section>
@@ -681,10 +605,26 @@
         </div>
       </div>
     </section>
+
+    <section id="volunteer" class="section">
+      <div class="section-title">
+        <h2>For members who want to help</h2>
+        <p>
+          Once families are part of the club, there are many small ways to support the cricket community.
+        </p>
+      </div>
+      <div class="volunteer-note">
+        <p>
+          Optional support areas include match-day help, photography, social media posts, flyer distribution,
+          website updates, catering and community events. Helping is welcome, but the first invitation is simple:
+          come, play cricket and have a good time.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2026 SG Karlsruhe Cricket · Built for the cricket community in Karlsruhe</p>
+    <p>© 2026 SG Karlsruhe Cricket · Youth, family and community cricket in Karlsruhe</p>
   </footer>
 </body>
 </html>
