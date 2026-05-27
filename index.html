@@ -144,7 +144,11 @@
     }
 
     .hero-card {
-     background: rgba(150, 0, 0, 0.78);
+     background: 
+  linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
+  url("images/cricket-ball.png");
+  background-size: cover;
+  background-position: center;
   width: 340px;
   height: 340px;
   min-width: 340px;
@@ -155,16 +159,27 @@
   box-sizing: border-box;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255,255,255,0.35);
-  transform: rotate(1.5deg) translate(110px, 100px);
-  display: flex;
+    display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   backdrop-filter: blur(4px);
+  animation: ballFloat 4s ease-in-out infinite;
     }
 
+@keyframes ballFloat {
+    0% {
+    transform: rotate(1deg) translate(140px, 100px) scale(1);
+  }
+  50% {
+    transform: rotate(4deg) translate(145px, 92px) scale(1.02);
+  }
+  100% {
+    transform: rotate(1deg) translate(140px, 100px) scale(1);
+  }
+}
     .hero-card h2 {
- font-size: 20px;
+  font-size: 20px;
   line-height: 1.15;
   margin: 0 0 18px;
   text-align: center;
@@ -180,6 +195,15 @@
   font-weight: 550;
     }
 
+   @media (max-width: 1200px) {
+   .hero-card {
+    transform: rotate(1.5deg) translate(80px, 100px);
+    width: 320px;
+    height: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+}
     .buttons {
       display: flex;
       flex-wrap: wrap;
