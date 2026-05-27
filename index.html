@@ -450,6 +450,32 @@
       .hero-inner { min-height: auto; padding: 56px 20px; }
       .hero-card { transform: none; }
     }
+
+.site-footer {
+  background: var(--sg-blue);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 15px;
+}
+
+.site-footer a {
+  color: var(--sg-yellow);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
   </style>
 </head>
 
@@ -584,7 +610,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="image-placeholder">images/softball-cricket.jpg</div>
+          <img src="images/softball-cricket.png" alt="Softball cricket" class="card-image">
           <div class="card-body">
             <h3>Softball cricket</h3>
             <p>A gentle and fun entry point for young beginners and families discovering cricket.</p>
@@ -592,7 +618,7 @@
         </article>
 
         <article class="card">
-          <div class="image-placeholder">images/transition-group.jpg</div>
+          <img src="images/transition-group.png" alt="Transition group" class="card-image">
           <div class="card-body">
             <h3>Transition group</h3>
             <p>For players ready to move towards more structured training and match situations.</p>
@@ -600,9 +626,9 @@
         </article>
 
         <article class="card">
-          <div class="image-placeholder">images/hardball-pathway.jpg</div>
+          <img src="images/hardball-pathway.png" alt="Hardball pathway" class="card-image">
           <div class="card-body">
-            <h3>Hard-ball pathway</h3>
+            <h3>Hardball pathway</h3>
             <p>For developing players who want to progress towards competitive cricket formats.</p>
           </div>
         </article>
@@ -660,12 +686,12 @@
       <div class="contact-panel">
         <div>
           <h2>Contact SG Karlsruhe Cricket</h2>
-          <p>Email: cricket@example.com</p>
+          <p>Email: Darren.Mclennan@sg-ka.de</p>
           <p>Location: Karlsruhe, Germany</p>
           <p>Training times and venues are shared with interested players and parents.</p>
         </div>
         <div>
-          <a class="btn btn-secondary" href="mailto:cricket@example.com">Send email</a>
+          <a class="btn btn-secondary" href="mailto:Darren.Mclennan@sg-ka.de">Send email</a>
           <br><br>
           <a class="btn btn-primary" href="#top">Back to top</a>
         </div>
@@ -676,6 +702,11 @@
 
   <footer>
     <p>© 2026 SG Karlsruhe Cricket · Kids, Youth, and Women community cricket in Karlsruhe</p>
+<footer class="site-footer">
+<p>
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a>
+  </p>
   </footer>
 </body>
 </html>
