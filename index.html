@@ -101,7 +101,7 @@
       overflow: hidden;
       background:
         linear-gradient(rgba(0, 45, 114, 0.38), rgba(0, 45, 114, 0.38)),
-        url("images/hero-karlsruhe-cricket.png") center center / cover no-repeat;
+        url("images/hero-karlsruhe-cricket.png") center center/ cover no-repeat;
     }
 
     .hero-inner {
@@ -146,49 +146,67 @@
     }
 
     .hero-card {
-      background:
-        linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
-        url("images/cricket-ball.png");
-      background-size: cover;
-      background-position: center;
-      width: 340px;
-      height: 340px;
-      min-width: 340px;
-      max-width: 340px;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      padding: 42px;
-      box-sizing: border-box;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.35);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
-      backdrop-filter: blur(4px);
-      animation: ballFloat 4s ease-in-out infinite;
-    }
+  background:
+    linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
+    url("images/cricket-ball.png");
+  background-size: cover;
+  background-position: center;
+  width: 260px;
+  height: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  border-radius: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  animation: ballFloat 4s ease-in-out infinite;
+}
 
-    @keyframes ballFloat {
-      0% {
-        transform: rotate(1deg) translate(140px, 100px) scale(1);
-      }
-      50% {
-        transform: rotate(4deg) translate(145px, 92px) scale(1.02);
-      }
-      100% {
-        transform: rotate(1deg) translate(140px, 100px) scale(1);
-      }
+.hero-card h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+.hero-card li {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+}
+
+.hero-card ul {
+  font-size: 13px;
+  line-height: 1.3;
+  padding-left: 16px;
+}
+
+  @keyframes ballFloat {
+  0% {
+    transform: rotate(1deg) translate(260px, 135px) scale(1);
+  }
+  50% {
+    transform: rotate(3deg) translate(266px, 128px) scale(1.015);
+  }
+  100% {
+    transform: rotate(1deg) translate(260px, 135px) scale(1);
+  }
+
+
     }
 
     .hero-card h2 {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.15;
       margin: 0 0 18px;
       text-align: center;
       color: white;
     }
 
+    .hero-card li {
+    font-size: 16px;
+    }
     .hero-card ul {
       margin: 0;
       padding-left: 18px;
@@ -517,7 +535,9 @@
       nav {
         justify-content: flex-start;
       }
-
+      .hero {
+      background-position: 70% top;
+     }
       .hero-inner,
       .grid-3,
       .grid-2,
@@ -598,12 +618,12 @@
         </div>
 
         <div class="hero-card">
-          <h2>New players welcome</h2>
+          <h2>New players Welcome!</h2>
           <ul>
-            <li>No previous cricket experience needed</li>
-            <li>Youth cricket and family-friendly sessions</li>
-            <li>Beginner pathway from softball to hard-ball</li>
-            <li>Training, matches and community events</li>
+            <li>No experience needed</li>
+            <li>Family-friendly sessions</li>
+            <li>Softball to hardball pathway</li>
+            
           </ul>
         </div>
       </div>
@@ -631,7 +651,7 @@
           <h3>Our mission</h3>
           <p>
             Celebrate cricket and unite communities — from children trying the sport for the first time
-            to adults who want to train, play and support the game locally.
+            to youth and women who want to train, play and support the game locally.
           </p>
         </div>
       </div>
