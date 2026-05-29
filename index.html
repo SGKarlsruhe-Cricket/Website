@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SG Karlsruhe Cricket</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     :root {
       --sg-yellow: #efdf00;
@@ -18,6 +22,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -127,12 +132,9 @@
       margin: 0 0 22px;
       letter-spacing: -2px;
       color: white;
-      text-shadow: 0 5px 22px rgba(0,0,0,0.42);
-      .hero h1 {
       text-shadow:
-      0 6px 24px rgba(0,0,0,0.45),
-      0 0 40px rgba(255,220,0,0.18);
-    }
+        0 6px 24px rgba(0,0,0,0.45),
+        0 0 40px rgba(255,220,0,0.18);
     }
 
     .hero p {
@@ -144,74 +146,67 @@
     }
 
     .hero-card {
-     background: 
-  linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
-  url("images/cricket-ball.png");
-  background-size: cover;
-  background-position: center;
-  width: 340px;
-  height: 340px;
-  min-width: 340px;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  padding: 42px;
-  box-sizing: border-box;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,0.35);
-    display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  backdrop-filter: blur(4px);
-  animation: ballFloat 4s ease-in-out infinite;
+      background:
+        linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
+        url("images/cricket-ball.png");
+      background-size: cover;
+      background-position: center;
+      width: 340px;
+      height: 340px;
+      min-width: 340px;
+      max-width: 340px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      padding: 42px;
+      box-sizing: border-box;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+      animation: ballFloat 4s ease-in-out infinite;
     }
 
-@keyframes ballFloat {
-    0% {
-    transform: rotate(1deg) translate(140px, 100px) scale(1);
-  }
-  50% {
-    transform: rotate(4deg) translate(145px, 92px) scale(1.02);
-  }
-  100% {
-    transform: rotate(1deg) translate(140px, 100px) scale(1);
-  }
-}
+    @keyframes ballFloat {
+      0% {
+        transform: rotate(1deg) translate(140px, 100px) scale(1);
+      }
+      50% {
+        transform: rotate(4deg) translate(145px, 92px) scale(1.02);
+      }
+      100% {
+        transform: rotate(1deg) translate(140px, 100px) scale(1);
+      }
+    }
+
     .hero-card h2 {
-  font-size: 20px;
-  line-height: 1.15;
-  margin: 0 0 18px;
-  text-align: center;
-  color: white;
+      font-size: 20px;
+      line-height: 1.15;
+      margin: 0 0 18px;
+      text-align: center;
+      color: white;
     }
 
     .hero-card ul {
-    margin: 0;
-  padding-left: 18px;
-  font-size: 16px;
-  line-height: 1.35;
-  color: rgba(255,255,255,0.9);
-  font-weight: 550;
+      margin: 0;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.9);
+      font-weight: 550;
     }
 
-   @media (max-width: 1200px) {
-   .hero-card {
-    transform: rotate(1.5deg) translate(80px, 100px);
-    width: 320px;
-    height: 320px;
-    min-width: 320px;
-    max-width: 320px;
-  }
-}
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       transition: all 0.25s ease;
-      .hero-buttons a:hover {
-   transform: translateY(-3px);
     }
+
+    .buttons a:hover {
+      transform: translateY(-3px);
     }
 
     .btn {
@@ -259,15 +254,23 @@
       font-size: 18px;
     }
 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      align-items: stretch;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
+      align-items: stretch;
     }
 
-    .grid-2 {
+    .grid-4 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 26px;
       align-items: stretch;
     }
@@ -281,9 +284,19 @@
       box-shadow: 0 12px 30px rgba(0,45,114,0.08);
     }
 
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     .card-body,
     .info-box {
       padding: 28px;
+    }
+
+    .card-body {
+      flex: 1;
     }
 
     .card h3,
@@ -299,26 +312,33 @@
       color: var(--muted);
     }
 
-    .image-placeholder {
-      height: 158px;
-      background: linear-gradient(135deg, var(--sg-blue), var(--sg-blue-dark));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--sg-yellow);
-      font-size: 15px;
-      font-weight: 900;
-      padding: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      letter-spacing: 0.2px;
-    }
-
-    .section-img {
+    .card-image,
+    .coach-card {
       width: 100%;
-      height: 158px;
+      height: 220px;
       object-fit: cover;
       display: block;
+      flex-shrink: 0;
+    }
+
+    .card-image {
+      object-position: center;
+    }
+
+    .coach-card {
+      object-position: center top;
+    }
+
+    .coach-points {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: #4f5f7a;
+    }
+
+    .coach-points li {
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 1.4;
     }
 
     .highlight {
@@ -423,59 +443,121 @@
       color: rgba(255,255,255,0.9);
     }
 
-    .volunteer-note {
-      background: #f7f9ff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      color: var(--muted);
+    .social-section {
+      text-align: center;
     }
 
-    footer {
-      background: var(--sg-blue);
-      color: var(--white);
-      padding: 30px 20px;
-      text-align: center;
+    .social-section p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .social-links a {
+      background: #00347a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
       font-weight: 700;
     }
 
+    .social-links a:hover {
+      background: #ffcc00;
+      color: #00347a;
+    }
+
+    .social-links i {
+      margin-right: 10px;
+      font-size: 20px;
+      color: var(--sg-yellow);
+    }
+
+    .site-footer {
+      background: var(--sg-blue);
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .site-footer a {
+      color: var(--sg-yellow);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1200px) {
+      .hero-card {
+        width: 320px;
+        height: 320px;
+        min-width: 320px;
+        max-width: 320px;
+      }
+    }
+
     @media (max-width: 900px) {
-      .nav-wrap { align-items: flex-start; flex-direction: column; }
-      nav { justify-content: flex-start; }
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
       .hero-inner,
       .grid-3,
       .grid-2,
       .band-inner,
-      .contact-panel { grid-template-columns: 1fr; }
-      .hero-inner { min-height: auto; padding: 56px 20px; }
-      .hero-card { transform: none; }
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 56px 20px;
+      }
+
+      .hero-card {
+        animation: none;
+        transform: none;
+      }
     }
 
-.site-footer {
-  background: var(--sg-blue);
-  color: white;
-  text-align: center;
-  padding: 28px 20px;
-  font-size: 15px;
-}
+    @media (max-width: 560px) {
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
 
-.site-footer a {
-  color: var(--sg-yellow);
-  text-decoration: none;
-  font-weight: 700;
-}
+      .hero h1 {
+        font-size: 42px;
+      }
 
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-  .card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
+      .hero-card {
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+        max-width: 300px;
+        padding: 36px;
+      }
+    }
   </style>
 </head>
 
@@ -483,7 +565,7 @@
   <header>
     <div class="nav-wrap">
       <a class="brand" href="#top">
-        <img class="site-logo" src="images/sgk-logo.png" alt="SG Karlsruhe logo placeholder">
+        <img class="site-logo" src="images/sgk-logo.png" alt="SG Karlsruhe logo">
         <span>SG Karlsruhe Cricket</span>
       </a>
 
@@ -491,6 +573,7 @@
         <a href="#about">Club</a>
         <a href="#kids">Kids</a>
         <a href="#programs">Programs</a>
+        <a href="#coaches">Coaches</a>
         <a href="#activities">Activities</a>
         <a href="#join">Join</a>
         <a href="#contact">Contact</a>
@@ -565,7 +648,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="image-placeholder">images/kids-beginners.jpg</div>
+          <img src="images/kids-beginners.jpg" alt="Beginners" class="card-image">
           <div class="card-body">
             <h3>For beginners</h3>
             <p>Children can start with simple softball cricket, basic movement skills and fun games.</p>
@@ -573,7 +656,7 @@
         </article>
 
         <article class="card">
-          <div class="image-placeholder">images/kids-skill-development.jpg</div>
+          <img src="images/skill-development.png" alt="Skill Development" class="card-image">
           <div class="card-body">
             <h3>Skill development</h3>
             <p>Players gradually improve technique, confidence, match awareness and teamwork.</p>
@@ -581,7 +664,7 @@
         </article>
 
         <article class="card">
-          <div class="image-placeholder">images/kids-match-day.jpg</div>
+          <img src="images/match-experience.jpg" alt="Match Day" class="card-image">
           <div class="card-body">
             <h3>Match-day experience</h3>
             <p>Friendly matches and youth events give children unforgettable cricket moments.</p>
@@ -594,7 +677,7 @@
       <div class="band-inner">
         <div class="stat"><strong>7</strong><span>Teams hosted at U11 Winter League 2025/26</span></div>
         <div class="stat"><strong>Focus</strong><span>Youth cricket U9/U11/U13/U15</span></div>
-        <div class="stat"><strong>2026</strong><span>Summer and Winter matche, friendlies and activities planned</span></div>
+        <div class="stat"><strong>2026</strong><span>Summer and winter matches, friendlies and activities planned</span></div>
         <div class="stat"><strong>SGK</strong><span>Part of the strong SG Karlsruhe sports community</span></div>
       </div>
     </div>
@@ -635,6 +718,73 @@
       </div>
     </section>
 
+    <section id="coaches" class="section">
+      <div class="section-title">
+        <h2>Meet our coaches</h2>
+        <p>
+          Our coaches help children learn cricket with confidence, teamwork and fun.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card">
+          <img src="images/robbin.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
+          <div class="card-body">
+            <h3>Robbin Bhagwan</h3>
+            <p><strong>Beginners Coach</strong></p>
+            <ul class="coach-points">
+              <li>Fun-first cricket coaching</li>
+              <li>Builds confidence in young players</li>
+              <li>Softball cricket specialist</li>
+              <li>Focus on teamwork and enjoyment</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/ramesh.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
+          <div class="card-body">
+            <h3>Ramesh Madathil</h3>
+            <p><strong>Softball Coach</strong></p>
+            <ul class="coach-points">
+              <li>Develops cricket fundamentals</li>
+              <li>Improves batting and fielding skills</li>
+              <li>Encourages sportsmanship and discipline</li>
+              <li>Creates an engaging learning environment</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/pravin.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
+          <div class="card-body">
+            <h3>Pravin Deshmukh</h3>
+            <p><strong>Youth Coach</strong></p>
+            <ul class="coach-points">
+              <li>Guides players towards hardball cricket</li>
+              <li>Focus on skill progression and match awareness</li>
+              <li>Supports player confidence and development</li>
+              <li>Helps young cricketers reach the next level</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/darren.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
+          <div class="card-body">
+            <h3>Darren McLennan</h3>
+            <p><strong>Head Coach / Cricket Lead</strong></p>
+            <ul class="coach-points">
+              <li>Experienced international cricket coach</li>
+              <li>Leads SGK cricket development pathway</li>
+              <li>Mentors coaches and young players</li>
+              <li>Passionate about growing cricket in Karlsruhe</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="activities" class="section">
       <div class="section-title">
         <h2>What we are planning</h2>
@@ -662,7 +812,7 @@
 
       <div class="grid-2">
         <div class="highlight">
-          <h3>Join as a player or parent</h3>
+          <h3>Join us!</h3>
           <p>
             Send us a short message with the player’s age group, cricket experience if any, and your
             contact details. We will guide you to the right training session.
@@ -673,7 +823,7 @@
         <div class="info-box">
           <h3>Good to know</h3>
           <ul>
-            <li>Children and adults can join</li>
+            <li>Children and teenagers can join</li>
             <li>Beginners are welcome</li>
             <li>Family-friendly atmosphere</li>
             <li>Training and match opportunities depend on season and venue availability</li>
@@ -698,15 +848,32 @@
       </div>
     </section>
 
+    <section class="section social-section">
+      <h2>Follow SG Karlsruhe Cricket</h2>
+      <p>See our latest training sessions, match highlights and cricket adventures in Karlsruhe.</p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/cricket.sg.karlsruhe" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://www.youtube.com/@SGKcricket" target="_blank">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+
+        <a href="https://wa.me/4917683696175" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>© 2026 SG Karlsruhe Cricket · Kids, Youth, and Women community cricket in Karlsruhe</p>
-<footer class="site-footer">
-<p>
-    <a href="impressum.html">Impressum</a> |
-    <a href="datenschutz.html">Datenschutz</a>
-  </p>
+    <p>
+      <a href="impressum.html">Impressum</a> |
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
   </footer>
 </body>
 </html>
