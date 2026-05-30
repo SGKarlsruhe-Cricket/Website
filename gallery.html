@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SG Karlsruhe Cricket</title>
+  <title>Gallery | SG Karlsruhe Cricket</title>
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -101,7 +101,6 @@
   background: var(--sg-blue);
   color: var(--sg-yellow);
   border-radius: 50%;
- }
 }
 
 .nav-social:hover {
@@ -163,74 +162,57 @@
     }
 
     .hero-card {
-  background:
-    linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
-    url("images/cricket-ball.png");
-  background-size: cover;
-  background-position: center;
-  width: 260px;
-  height: 260px;
-  min-width: 260px;
-  max-width: 260px;
-  border-radius: 50%;
-  padding: 30px;
-  box-sizing: border-box;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,0.35);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  backdrop-filter: blur(4px);
-  animation: ballFloat 4s ease-in-out infinite;
-}
-
-.hero-card h2 {
-  font-size: 18px;
-  margin: 0 0 12px;
-.hero-card li {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-}
-}
-
-.hero-card ul {
-  font-size: 13px;
-  line-height: 1.3;
-  padding-left: 16px;
-}
-
-  @keyframes ballFloat {
-  0% {
-    transform: rotate(1deg) translate(260px, 135px) scale(1);
-  }
-  50% {
-    transform: rotate(3deg) translate(266px, 128px) scale(1.015);
-  }
-  100% {
-    transform: rotate(1deg) translate(260px, 135px) scale(1);
-  }
-
-
+      background:
+        linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
+        url("images/cricket-ball.png");
+      background-size: cover;
+      background-position: center;
+      width: 260px;
+      height: 260px;
+      min-width: 260px;
+      max-width: 260px;
+      border-radius: 50%;
+      padding: 30px;
+      box-sizing: border-box;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+      animation: ballFloat 4s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 22px;
       line-height: 1.15;
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       text-align: center;
       color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
     }
 
-    .hero-card li {
-    font-size: 16px;
-    }
     .hero-card ul {
       margin: 0;
       padding-left: 18px;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.35;
-      color: rgba(255,255,255,0.9);
-      font-weight: 550;
+      color: rgba(255,255,255,0.95);
+      font-weight: 650;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+
+    @keyframes ballFloat {
+      0% {
+        transform: rotate(1deg) translate(260px, 135px) scale(1);
+      }
+      50% {
+        transform: rotate(3deg) translate(266px, 128px) scale(1.015);
+      }
+      100% {
+        transform: rotate(1deg) translate(260px, 135px) scale(1);
+      }
     }
 
     .buttons {
@@ -515,6 +497,78 @@
       color: var(--sg-yellow);
     }
 
+    .gallery-hero {
+      background:
+        linear-gradient(rgba(0, 45, 114, 0.55), rgba(0, 45, 114, 0.55)),
+        url("images/hero-karlsruhe-cricket.png") 70% 25%/ cover no-repeat;
+      color: white;
+    }
+
+    .gallery-hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      min-height: 340px;
+      padding: 72px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .gallery-hero h1 {
+      font-size: clamp(46px, 7vw, 78px);
+      line-height: 1;
+      margin: 0 0 18px;
+      letter-spacing: -2px;
+      color: white;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.45);
+    }
+
+    .gallery-hero p {
+      max-width: 720px;
+      font-size: 21px;
+      margin: 0;
+      color: white;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.38);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,45,114,0.10);
+      background: #f7f9ff;
+      text-decoration: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(transparent, rgba(0, 45, 114, 0.78));
+      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    }
+
     .site-footer {
       background: var(--sg-blue);
       color: white;
@@ -595,26 +649,48 @@
         padding: 36px;
       }
     }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-hero-inner {
+        min-height: 280px;
+        padding: 56px 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 240px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <header>
     <div class="nav-wrap">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html#top">
         <img class="site-logo" src="images/sgk-logo.png" alt="SG Karlsruhe logo">
         <span>SG Karlsruhe Cricket</span>
       </a>
 
       <nav>
-        <a href="#about">Club</a>
-        <a href="#kids">Kids</a>
-        <a href="#programs">Programs</a>
-        <a href="#coaches">Coaches</a>
-        <a href="#activities">Activities</a>
+        <a href="index.html#about">Club</a>
+        <a href="index.html#kids">Kids</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#coaches">Coaches</a>
+        <a href="index.html#activities">Activities</a>
         <a href="gallery.html">Gallery</a>
-        <a href="#join">Join</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#join">Join</a>
+        <a href="index.html#contact">Contact</a>
 
 <a class="nav-social" href="https://www.instagram.com/cricket.sg.karlsruhe" target="_blank">
   <i class="fab fa-instagram"></i>
@@ -632,269 +708,98 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-inner">
+    <section class="gallery-hero">
+      <div class="gallery-hero-inner">
         <div>
-          <div class="eyebrow">Cricket in Karlsruhe</div>
-          <h1>Play cricket. Make friends. Have fun.</h1>
+          <div class="eyebrow">SG Karlsruhe Cricket</div>
+          <h1>Gallery</h1>
           <p>
-            SG Karlsruhe Cricket welcomes children, families, beginners and experienced players.
-            Come for a trial session, learn the game and enjoy cricket with a friendly local community.
-          </p>
-          <div class="buttons">
-            <a class="btn btn-primary" href="#join">Join a trial session</a>
-            <a class="btn btn-secondary" href="#kids">Explore kids cricket</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h2>New players Welcome!</h2>
-          <ul>
-            <li>No experience needed</li>
-            <li>Family-friendly sessions</li>
-            <li>Softball to hardball pathway</li>
-            
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="section-title">
-        <h2>A friendly cricket department at SG Karlsruhe</h2>
-        <p>
-          We are building a welcoming cricket community in Karlsruhe — with a special focus on children,
-          families, learning, teamwork and enjoying the sport together.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="info-box">
-          <h3>Our vision</h3>
-          <p>
-            To help young players develop strong character on and off the field, while creating excellent
-            cricket opportunities in South Germany.
-          </p>
-        </div>
-
-        <div class="highlight">
-          <h3>Our mission</h3>
-          <p>
-            Celebrate cricket and unite communities — from children trying the sport for the first time
-            to youth and women who want to train, play and support the game locally.
+            Moments from training sessions, youth tournaments, friendly matches
+            and community cricket activities in Karlsruhe.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="kids" class="section">
+    <section class="section">
       <div class="section-title">
-        <h2>Kids cricket that feels fun, safe and motivating</h2>
+        <h2>Winter League 2025/26</h2>
         <p>
-          Children learn batting, bowling, fielding and teamwork through age-appropriate drills,
-          friendly matches and positive coaching.
+          Highlights from youth cricket, match days and the SGK cricket community.
         </p>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <img src="images/kids-beginners.jpg" alt="Beginners" class="card-image">
-          <div class="card-body">
-            <h3>For beginners</h3>
-            <p>Children can start with simple softball cricket, basic movement skills and fun games.</p>
-          </div>
-        </article>
+      <div class="gallery-grid">
+        <a class="gallery-item" href="images/gallery/gallery-01.jpg" target="_blank">
+          <img src="images/gallery/gallery-01.jpg" alt="SG Karlsruhe Cricket Winter League photo">
+          <div class="gallery-caption">Winter League</div>
+        </a>
 
-        <article class="card">
-          <img src="images/skill-development.png" alt="Skill Development" class="card-image">
-          <div class="card-body">
-            <h3>Skill development</h3>
-            <p>Players gradually improve technique, confidence, match awareness and teamwork.</p>
-          </div>
-        </article>
+        <a class="gallery-item" href="images/gallery/gallery-02.jpg" target="_blank">
+          <img src="images/gallery/gallery-02.jpg" alt="SG Karlsruhe Cricket Match Day photo">
+          <div class="gallery-caption">Match Day</div>
+        </a>
 
-        <article class="card">
-          <img src="images/match-experience.jpg" alt="Match Day" class="card-image">
-          <div class="card-body">
-            <h3>Match-day experience</h3>
-            <p>Friendly matches and youth events give children unforgettable cricket moments.</p>
-          </div>
-        </article>
+        <a class="gallery-item" href="images/gallery/gallery-03.jpg" target="_blank">
+          <img src="images/gallery/gallery-03.jpg" alt="SG Karlsruhe Cricket youth photo">
+          <div class="gallery-caption">Youth Cricket</div>
+        </a>
+
+        <a class="gallery-item" href="images/gallery/gallery-04.jpg" target="_blank">
+          <img src="images/gallery/gallery-04.jpg" alt="SG Karlsruhe Cricket team photo">
+          <div class="gallery-caption">Team Moments</div>
+        </a>
+
+        <a class="gallery-item" href="images/gallery/gallery-05.jpg" target="_blank">
+          <img src="images/gallery/gallery-05.jpg" alt="SG Karlsruhe Cricket friendly match photo">
+          <div class="gallery-caption">Friendly Matches</div>
+        </a>
+
+        <a class="gallery-item" href="images/gallery/gallery-06.jpg" target="_blank">
+          <img src="images/gallery/gallery-06.jpg" alt="SG Karlsruhe Cricket community photo">
+          <div class="gallery-caption">Cricket Community</div>
+        </a>
       </div>
     </section>
 
-    <div class="band">
-      <div class="band-inner">
-        <div class="stat"><strong>7</strong><span>Teams hosted at U11 Winter League 2025/26</span></div>
-        <div class="stat"><strong>Focus</strong><span>Youth cricket U9/U11/U13/U15</span></div>
-        <div class="stat"><strong>2026</strong><span>Summer and winter matches, friendlies and activities planned</span></div>
-        <div class="stat"><strong>SGK</strong><span>Part of the strong SG Karlsruhe sports community</span></div>
-      </div>
-    </div>
-
-    <section id="programs" class="section">
+    <section class="section">
       <div class="section-title">
-        <h2>Programs for different levels</h2>
+        <h2>Cricket Training & Club Life</h2>
         <p>
-          Whether your child is completely new or already loves cricket, there is a path to join,
-          learn and grow at SG Karlsruhe Cricket.
+          Learning cricket through fun, teamwork, confidence and positive coaching.
         </p>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <img src="images/softball-cricket.png" alt="Softball cricket" class="card-image">
-          <div class="card-body">
-            <h3>Softball cricket</h3>
-            <p>A gentle and fun entry point for young beginners and families discovering cricket.</p>
-          </div>
-        </article>
+      <div class="gallery-grid">
+        <a class="gallery-item" href="images/gallery/gallery-07.jpg" target="_blank">
+          <img src="images/gallery/gallery-07.jpg" alt="SG Karlsruhe Cricket training photo">
+          <div class="gallery-caption">Training</div>
+        </a>
 
-        <article class="card">
-          <img src="images/transition-group.png" alt="Transition group" class="card-image">
-          <div class="card-body">
-            <h3>Transition group</h3>
-            <p>For players ready to move towards more structured training and match situations.</p>
-          </div>
-        </article>
+        <a class="gallery-item" href="images/gallery/gallery-08.jpg" target="_blank">
+          <img src="images/gallery/gallery-08.jpg" alt="SG Karlsruhe Cricket skill development photo">
+          <div class="gallery-caption">Skill Development</div>
+        </a>
 
-        <article class="card">
-          <img src="images/hardball-pathway.png" alt="Hardball pathway" class="card-image">
-          <div class="card-body">
-            <h3>Hardball pathway</h3>
-            <p>For developing players who want to progress towards competitive cricket formats.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+        <a class="gallery-item" href="images/gallery/gallery-09.jpg" target="_blank">
+          <img src="images/gallery/gallery-09.jpg" alt="SG Karlsruhe Cricket teamwork photo">
+          <div class="gallery-caption">Teamwork</div>
+        </a>
 
-    <section id="coaches" class="section">
-      <div class="section-title">
-        <h2>Meet our coaches</h2>
-        <p>
-          Our coaches help children learn cricket with confidence, teamwork and fun.
-        </p>
-      </div>
+        <a class="gallery-item" href="images/gallery/gallery-10.jpg" target="_blank">
+          <img src="images/gallery/gallery-10.jpg" alt="SG Karlsruhe Cricket community event photo">
+          <div class="gallery-caption">Community</div>
+        </a>
 
-      <div class="grid-4">
-        <article class="card">
-          <img src="images/robbin.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
-          <div class="card-body">
-            <h3>Robbin Bhagwan</h3>
-            <p><strong>Beginners Coach</strong></p>
-            <ul class="coach-points">
-              <li>Fun-first cricket coaching</li>
-              <li>Builds confidence in young players</li>
-              <li>Softball cricket specialist</li>
-              <li>Focus on teamwork and enjoyment</li>
-            </ul>
-          </div>
-        </article>
+        <a class="gallery-item" href="images/gallery/gallery-11.jpg" target="_blank">
+          <img src="images/gallery/gallery-11.jpg" alt="SG Karlsruhe Cricket activity photo">
+          <div class="gallery-caption">Activities</div>
+        </a>
 
-        <article class="card">
-          <img src="images/ramesh.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
-          <div class="card-body">
-            <h3>Ramesh Madathil</h3>
-            <p><strong>Softball Coach</strong></p>
-            <ul class="coach-points">
-              <li>Develops cricket fundamentals</li>
-              <li>Improves batting and fielding skills</li>
-              <li>Encourages sportsmanship and discipline</li>
-              <li>Creates an engaging learning environment</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="images/pravin.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
-          <div class="card-body">
-            <h3>Pravin Deshmukh</h3>
-            <p><strong>Youth Coach</strong></p>
-            <ul class="coach-points">
-              <li>Guides players towards hardball cricket</li>
-              <li>Focus on skill progression and match awareness</li>
-              <li>Supports player confidence and development</li>
-              <li>Helps young cricketers reach the next level</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="images/darren.png" alt="SG Karlsruhe Cricket coach" class="coach-card">
-          <div class="card-body">
-            <h3>Darren McLennan</h3>
-            <p><strong>Head Coach / Cricket Lead</strong></p>
-            <ul class="coach-points">
-              <li>Experienced international cricket coach</li>
-              <li>Leads SGK cricket development pathway</li>
-              <li>Mentors coaches and young players</li>
-              <li>Passionate about growing cricket in Karlsruhe</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="activities" class="section">
-      <div class="section-title">
-        <h2>What we are planning</h2>
-        <p>
-          We want the website to become the simple place where families can see what is happening next.
-        </p>
-      </div>
-
-      <div class="activity-list">
-        <div class="activity"><strong>Beginners kids match</strong><span>A friendly match format for new players and families.</span></div>
-        <div class="activity"><strong>U11 summer and winter activities</strong><span>More youth cricket opportunities across the season.</span></div>
-        <div class="activity"><strong>Friendly matches with neighbouring clubs</strong><span>Regular match experience in a relaxed community setting.</span></div>
-        <div class="activity"><strong>Family and community events</strong><span>Cricket, food, friends and a welcoming club atmosphere.</span></div>
-      </div>
-    </section>
-
-    <section id="join" class="section">
-      <div class="section-title">
-        <h2>Want to try cricket?</h2>
-        <p>
-          The easiest next step is to contact us and come for a trial session. Beginners are welcome,
-          and children do not need their own equipment for the first session.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="highlight">
-          <h3>Join us!</h3>
-          <p>
-            Send us a short message with the player’s age group, cricket experience if any, and your
-            contact details. We will guide you to the right training session.
-          </p>
-          <a class="btn btn-secondary" href="#contact">Contact us</a>
-        </div>
-
-        <div class="info-box">
-          <h3>Good to know</h3>
-          <ul>
-            <li>Children and teenagers can join</li>
-            <li>Beginners are welcome</li>
-            <li>Family-friendly atmosphere</li>
-            <li>Training and match opportunities depend on season and venue availability</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="contact-panel">
-        <div>
-          <h2>Contact SG Karlsruhe Cricket</h2>
-          <p>Email: Darren.Mclennan@sg-ka.de</p>
-          <p>Location: Karlsruhe, Germany</p>
-          <p>Training times and venues are shared with interested players and parents.</p>
-        </div>
-        <div>
-          <a class="btn btn-secondary" href="mailto:Darren.Mclennan@sg-ka.de">Send email</a>
-          <br><br>
-          <a class="btn btn-primary" href="#top">Back to top</a>
-        </div>
+        <a class="gallery-item" href="images/gallery/gallery-12.jpg" target="_blank">
+          <img src="images/gallery/gallery-12.jpg" alt="SG Karlsruhe Cricket club photo">
+          <div class="gallery-caption">SGK Cricket</div>
+        </a>
       </div>
     </section>
 
@@ -921,14 +826,12 @@
   <footer class="site-footer">
     <p>© 2026 SG Karlsruhe Cricket · Kids, Youth, and Women community cricket in Karlsruhe</p>
     <p>
-
  <p>
     Part of SG Karlsruhe e.V. –
     <a href="https://www.sg-ka.de/sportangebot/cricket/" target="_blank">
       Official SG Karlsruhe Page
     </a>
   </p>
-
       <a href="impressum.html">Impressum</a> |
       <a href="datenschutz.html">Datenschutz</a>
     </p>
