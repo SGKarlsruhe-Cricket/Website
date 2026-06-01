@@ -1,0 +1,744 @@
+/* SG Karlsruhe Cricket shared stylesheet */
+:root {
+  --sg-yellow: #efdf00;
+  --sg-yellow-soft: #fff6a8;
+  --sg-blue: #002d72;
+  --sg-blue-dark: #001970;
+  --white: #ffffff;
+  --ink: #182033;
+  --muted: #5f6b7a;
+  --line: rgba(0, 45, 114, 0.14);
+  --shadow: 0 18px 45px rgba(0, 45, 114, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  scroll-margin-top: 110px;
+}
+
+
+/* Header / navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  color: var(--sg-blue);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  font-size: 16px;
+}
+
+.site-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  background: var(--sg-yellow);
+  border: 3px solid var(--sg-blue);
+}
+
+
+nav a {
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--sg-blue);
+}
+
+nav a:hover {
+  background: var(--sg-yellow);
+}
+
+.nav-social {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sg-blue);
+  color: var(--sg-yellow);
+  border-radius: 50%;
+}
+
+.nav-social:hover {
+  background: var(--sg-yellow);
+  color: var(--sg-blue);
+}
+
+/* Home hero */
+.hero {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 45, 114, 0.38), rgba(0, 45, 114, 0.38)),
+    url("../images/hero-karlsruhe-cricket.png") center center / cover no-repeat;
+}
+
+.hero-inner {
+  max-width: 1120px;
+  min-height: 620px;
+  margin: 0 auto;
+  padding: 72px 20px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  color: var(--sg-yellow);
+  text-shadow: 0 3px 12px rgba(0,0,0,0.35);
+}
+
+.hero h1 {
+  font-size: clamp(44px, 8vw, 82px);
+  line-height: 0.96;
+  margin: 0 0 22px;
+  letter-spacing: -2px;
+  color: white;
+  text-shadow:
+    0 6px 24px rgba(0,0,0,0.45),
+    0 0 40px rgba(255,220,0,0.18);
+}
+
+.hero p {
+  font-size: 21px;
+  max-width: 700px;
+  margin: 0 0 30px;
+  color: white;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.38);
+}
+
+.hero-card {
+  background:
+    linear-gradient(rgba(120, 0, 0, 0.55), rgba(120, 0, 0, 0.45)),
+    url("../images/cricket-ball.png");
+  background-size: cover;
+  background-position: center;
+  width: 260px;
+  height: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  border-radius: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  animation: ballFloat 4s ease-in-out infinite;
+}
+
+.hero-card h2 {
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.9);
+  font-weight: 550;
+}
+
+.hero-card li {
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+@keyframes ballFloat {
+  0% {
+    transform: rotate(1deg) translate(260px, 135px) scale(1);
+  }
+  50% {
+    transform: rotate(3deg) translate(266px, 128px) scale(1.015);
+  }
+  100% {
+    transform: rotate(1deg) translate(260px, 135px) scale(1);
+  }
+}
+
+/* Common blocks */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  transition: all 0.25s ease;
+}
+
+.buttons a:hover {
+  transform: translateY(-3px);
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid var(--sg-blue);
+}
+
+.btn-primary {
+  background: var(--sg-blue);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--sg-blue);
+}
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 74px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-title h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 0 0 10px;
+  color: var(--sg-blue);
+  letter-spacing: -1px;
+}
+
+.section-title p {
+  margin: 0 auto;
+  color: var(--muted);
+  max-width: 760px;
+  font-size: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.card,
+.info-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,45,114,0.08);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body,
+.info-box {
+  padding: 28px;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card h3,
+.info-box h3 {
+  margin: 0 0 10px;
+  color: var(--sg-blue);
+  font-size: 23px;
+}
+
+.card p,
+.info-box p,
+.info-box li {
+  color: var(--muted);
+}
+
+.card-image,
+.coach-card {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.card-image {
+  object-position: center;
+}
+
+.coach-card {
+  object-position: center top;
+}
+
+.coach-points {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: #4f5f7a;
+}
+
+.coach-points li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.highlight {
+  background: var(--sg-blue);
+  color: var(--white);
+  border-radius: 26px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.highlight h3 {
+  color: var(--sg-yellow);
+  margin-top: 0;
+  font-size: 26px;
+}
+
+.highlight p,
+.highlight li {
+  color: rgba(255,255,255,0.9);
+}
+
+.band {
+  background: var(--sg-blue);
+  color: var(--white);
+  margin: 30px 0;
+}
+
+.band-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 58px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 20px;
+  padding: 22px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  color: var(--sg-yellow);
+  font-size: 36px;
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+.activity-list {
+  display: grid;
+  gap: 14px;
+}
+
+.activity {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 8px solid var(--sg-yellow);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 22px rgba(0,45,114,0.07);
+}
+
+.activity strong {
+  color: var(--sg-blue);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.activity span {
+  color: var(--muted);
+}
+
+.contact-panel {
+  background: linear-gradient(135deg, var(--sg-blue), var(--sg-blue-dark));
+  color: var(--white);
+  border-radius: 30px;
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.contact-panel h2 {
+  color: var(--sg-yellow);
+  margin-top: 0;
+  font-size: 36px;
+}
+
+.contact-panel p {
+  color: rgba(255,255,255,0.9);
+}
+
+.social-section {
+  text-align: center;
+}
+
+.social-section p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.social-links a {
+  background: #00347a;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.social-links a:hover {
+  background: #ffcc00;
+  color: #00347a;
+}
+
+.social-links i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: var(--sg-yellow);
+}
+
+.site-footer {
+  background: var(--sg-blue);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.site-footer a {
+  color: var(--sg-yellow);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery page */
+.gallery-hero {
+  background:
+    linear-gradient(rgba(0, 45, 114, 0.55), rgba(0, 45, 114, 0.55)),
+    url("../images/hero-karlsruhe-cricket.png") 70% 25% / cover no-repeat;
+  color: white;
+}
+
+.gallery-hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  min-height: 340px;
+  padding: 72px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-hero h1 {
+  font-size: clamp(46px, 7vw, 78px);
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: -2px;
+  color: white;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.45);
+}
+
+.gallery-hero p {
+  max-width: 720px;
+  font-size: 21px;
+  margin: 0;
+  color: white;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.38);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,45,114,0.10);
+  background: #f7f9ff;
+  text-decoration: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  color: white;
+  font-weight: 800;
+  background: linear-gradient(transparent, rgba(0, 45, 114, 0.78));
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+/* Sponsor page */
+.sponsor-image {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 18px 0;
+}
+
+.progress-fill {
+  width: 5%;
+  height: 100%;
+  background: var(--sg-yellow);
+  border-radius: 999px;
+}
+
+.sponsor-intro {
+  padding-top: 46px;
+  padding-bottom: 10px;
+}
+
+.sponsor-visual {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.sponsor-intro .section-title {
+  margin-bottom: 0;
+}
+
+/* Responsive rules */
+@media (max-width: 1200px) {
+  .hero-card {
+    width: 320px;
+    height: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    padding-top: 150px;
+  }
+
+  section {
+    scroll-margin-top: 170px;
+  }
+
+  .nav-wrap {
+    height: auto;
+    min-height: 88px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    background-position: 70% top;
+  }
+
+  .hero-inner,
+  .grid-3,
+  .grid-2,
+  .band-inner,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding: 56px 20px;
+  }
+
+  .hero-card {
+    animation: none;
+    transform: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-hero-inner {
+    min-height: 280px;
+    padding: 56px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    padding-top: 175px;
+  }
+
+  section {
+    scroll-margin-top: 190px;
+  }
+
+  .grid-4,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-card {
+    width: 300px;
+    height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 36px;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+}
